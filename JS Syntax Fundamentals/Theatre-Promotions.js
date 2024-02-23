@@ -14,15 +14,51 @@ function solve (day, age) {
 
     let ticketPrice = 0;
 
+    if (age < 0) {
+        return console.log('Error!');
+    }
+
     if (day == 'Weekday') {
                      
-        if (age >=0 || age <=18) {
+        if (age >64 && age <=122) {
+            ticketPrice = weekdayMaxAge122price;
+        }
+        else if (age >18 && age <=64) {
+            ticketPrice = weekdayMaxAge64price;
+        }
+        else if (age >=0 && age <=18) {
             ticketPrice = weekdayMaxAge18price;
         }
     }
-
-    console.log(ticketPrice)
+    else if (day == 'Weekend') {
+                     
+        if (age >64 && age <=122) {
+            ticketPrice = weekendMaxAge122price;
+        }
+        else if (age >18 && age <=64) {
+            ticketPrice = weekenMaxAge64price;
+        }
+        else if (age >=0 && age <=18) {
+            ticketPrice = weekendMaxAge18price;
+        }
+    }
+    else if (day == 'Holiday') {
+                     
+        if (age >64 && age <=122) {
+            ticketPrice = holidayMaxAge122price;
+        }
+        else if (age >18 && age <=64) {
+            ticketPrice = holidayaxAge64price;
+        }
+        else if (age >=0 && age <=18) {
+            ticketPrice = holidaydMaxAge18price;
+        }
+    }
+    else {
+        return console.log('Error!');
+    }
+   
+    console.log(`${ticketPrice}$`);
     
 }
 
-solve('Weekday', 12)
