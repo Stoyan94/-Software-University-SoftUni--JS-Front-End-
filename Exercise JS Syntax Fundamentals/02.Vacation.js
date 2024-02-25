@@ -37,17 +37,26 @@ function solve(countPeopels, typePeopels, day) {
 
         if (countPeopels >= 100) {
             countPeopels-=10;
-        } 
+        }
+        
+        let pricePerPerson;
 
         if (day === 'Friday') {
             totalPrice = countPeopels * businessFridayPrice;
+            // pricePerPerson = businessFridayPrice;
         }
         else if (day === 'Saturday') {
             totalPrice = countPeopels * businessSaturdayPrice;
+            // pricePerPerson = businessSaturdayPrice;
         }
         else if (day === 'Sunday') {
-            totalPrice = countPeopels * businessSundayPrice;        
+            totalPrice = countPeopels * businessSundayPrice;    
+            // pricePerPerson = businessSundayPrice;  
         }
+
+        // if (countPeopels >= 100) {
+        //     totalPrice -= pricePerPerson * 10;
+        // }
         
         case 'Regular':
 
@@ -70,7 +79,7 @@ function solve(countPeopels, typePeopels, day) {
     console.log(`Total price: ${totalPrice.toFixed(2)}`);
 }
 
-solve(40,
-    "Regular",
+solve(100,
+    "Business",
     "Saturday"    
     )
