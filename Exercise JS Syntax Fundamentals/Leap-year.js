@@ -1,10 +1,10 @@
 function solve(input) {
     let year = input;
     if ((year % 4 === 0 && year % 100 !== 0)|| year % 400 == 0){
-        console.log('yes')
-    } else{
+        return console.log('yes');
+    } 
         console.log('no')
-    }
+    
 }
 
 solve(1984)
