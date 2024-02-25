@@ -61,14 +61,16 @@ function solve(countPeopels, typePeopels, day) {
             totalPrice = countPeopels * regularSundayPrice;        
         }
 
-        if (countPeopels >= 30) {
-            totalPrice *= 0.85;
+        if (countPeopels >= 10 && countPeopels <=20) {
+            totalPrice *= 0.95;
         } 
         
     }
     
-    console.log(totalPrice.toFixed(2));
+    console.log(`Total price: ${totalPrice.toFixed(2)}`);
 }
 
-
-solve(90, "Business", "Sunday")
+solve(40,
+    "Regular",
+    "Saturday"    
+    )
