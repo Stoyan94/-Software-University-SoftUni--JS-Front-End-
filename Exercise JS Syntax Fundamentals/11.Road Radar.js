@@ -1,0 +1,4 @@
+function solve (currSpeed, area) {
+
+    
+}
