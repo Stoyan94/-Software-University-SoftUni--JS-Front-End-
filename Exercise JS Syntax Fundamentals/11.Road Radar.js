@@ -7,8 +7,9 @@ function solve (currSpeed, area) {
 
     const speeding = 20;
     const excessiveSpeeding = 40; 
-    
-    let dataSpeed = currSpeed;
+
+    let status; 
+    let currZoneSpeed;
 
     isSpeedMore = false;
 
@@ -20,6 +21,8 @@ function solve (currSpeed, area) {
             currSpeed -= motorwayMaxSpeed;
             isSpeedMore = true;
         }
+
+        currZoneSpeed = motorwayMaxSpeed;
             break;
         
         case 'interstate':
@@ -30,6 +33,8 @@ function solve (currSpeed, area) {
             isSpeedMore = true;
         }
         
+        currZoneSpeed = interstateMaxSpeed;
+
             break;
 
         case 'city':
@@ -40,6 +45,8 @@ function solve (currSpeed, area) {
             isSpeedMore = true;
         }
         
+        currZoneSpeed = cityMaxSpeed;
+
             break;
 
         case 'residential':
@@ -50,33 +57,48 @@ function solve (currSpeed, area) {
             isSpeedMore = true;
         }
 
+        currZoneSpeed = residentialMaxSpeed;
+
             break;
+    }
+
+    if (currSpeed > 0 && currSpeed <= speeding) {
+        
+        status = 'speeding';
+    }
+    else if (currSpeed > speeding && currSpeed <= excessiveSpeeding) {
+        
+        status = 'excessive speeding';
+    }
+    else {
+        
+        status = 'reckless driving';
     }
 
     if (isSpeedMore) {
         
-        if (dataSpeed > motorwayMaxSpeed ) {
+        if (area === 'motorway' ) {
             
-            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 130 - reckless driving`);
+            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 130 - ${status}`);
         }
-        else if (dataSpeed > interstateMaxSpeed) {
+        else if (area === 'interstate') {
 
-            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 90 - excessive speeding`);
+            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 90 - ${status}`);
         }
-        else if (dataSpeed > cityMaxSpeed) {
+        else if (area === 'city') {
             
-            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 50 - excessive speeding`);
+            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 50 - ${status}`);
         }
-        else if (dataSpeed > residentialMaxSpeed) {
+        else if (area === 'residential') {
             
-            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 50 - excessive speeding`);
+            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 50 - ${status}`);
 
         }
-
+        
         return
     }
-
-    console.log(`Driving 40 km/h in a 50 zone`);
+    
+    console.log(`Driving ${currSpeed} km/h in a ${currZoneSpeed} zone`);
 }
 
-solve (200, 'interstate');
+solve (21, 'residential');
