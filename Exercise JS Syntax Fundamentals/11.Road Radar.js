@@ -91,7 +91,7 @@ function solve (currSpeed, area) {
         }
         else if (area === 'residential') {
             
-            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 50 - ${status}`);
+            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 20 - ${status}`);
 
         }
         
@@ -101,4 +101,3 @@ function solve (currSpeed, area) {
     console.log(`Driving ${currSpeed} km/h in a ${currZoneSpeed} zone`);
 }
 
-solve (21, 'residential');
