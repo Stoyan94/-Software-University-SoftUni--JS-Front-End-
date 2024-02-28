@@ -21,18 +21,17 @@ function solve (currSpeed, area) {
             currSpeed -= motorwayMaxSpeed;
             isSpeedMore = true;
         }
-
         currZoneSpeed = motorwayMaxSpeed;
+
             break;
         
         case 'interstate':
 
         if (currSpeed > interstateMaxSpeed ) {
-            
+
             currSpeed -= interstateMaxSpeed;
-            isSpeedMore = true;
-        }
-        
+            isSpeedMore = true;        
+        }        
         currZoneSpeed = interstateMaxSpeed;
 
             break;
@@ -43,8 +42,7 @@ function solve (currSpeed, area) {
             
             currSpeed -= cityMaxSpeed;
             isSpeedMore = true;
-        }
-        
+        }        
         currZoneSpeed = cityMaxSpeed;
 
             break;
@@ -56,7 +54,6 @@ function solve (currSpeed, area) {
             currSpeed -= residentialMaxSpeed;
             isSpeedMore = true;
         }
-
         currZoneSpeed = residentialMaxSpeed;
 
             break;
@@ -75,29 +72,15 @@ function solve (currSpeed, area) {
         status = 'reckless driving';
     }
 
-    if (isSpeedMore) {
-        
-        if (area === 'motorway' ) {
-            
-            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 130 - ${status}`);
-        }
-        else if (area === 'interstate') {
-
-            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 90 - ${status}`);
-        }
-        else if (area === 'city') {
-            
-            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 50 - ${status}`);
-        }
-        else if (area === 'residential') {
-            
-            console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of 20 - ${status}`);
-
-        }
-        
+    if (isSpeedMore) {        
+             
+        console.log(`The speed is ${currSpeed} km/h faster than the allowed speed of ${currZoneSpeed} - ${status}`);
+         
         return
     }
     
     console.log(`Driving ${currSpeed} km/h in a ${currZoneSpeed} zone`);
 }
+
+
 
