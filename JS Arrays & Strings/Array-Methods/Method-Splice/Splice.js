@@ -9,3 +9,9 @@ console.log(nums); // [ 1, 2, 3, 4, 19, 6 ]
 let el = nums.splice(2, 1); // removes 1 element at index 2
 console.log(nums); // [ 1, 2, 4, 19, 6 ]
 console.log(el); // [ 3 ]
+
+//Add and remove items
+
+let cars = ['BWM', 'Audi', 'VW']
+cars.splice(1, 2, 'Bently');
+console.log(cars);
