@@ -3,6 +3,8 @@
 // from begin to end (end not included)
 // ▪ The original array will not be modified
 
+//Shallow copy is new arr with new reference and its not the same arr
+
 let fruits = ['Banana', 'Orange', 'Lemon', 'Apple'];
 let citrus = fruits.slice(1, 3);
 let fruitsCopy = fruits.slice();
