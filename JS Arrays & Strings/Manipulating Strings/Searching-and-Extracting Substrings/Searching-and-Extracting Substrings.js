@@ -17,3 +17,11 @@ console.log(last); // Expected output: 11
 let str3 = "I am JavaScript developer";
 let sub = str3.substring(5, 10);
 console.log(sub); // Expected output: JavaS
+
+
+function solve(text, startIndex, count) {
+    let substring = text.substring(startIndex, startIndex + count);
+    console.log(substring); 
+}
+
+solve("ASentence", 1, 8 )
