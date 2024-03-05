@@ -3,6 +3,8 @@ function solve (text) {
     let splitText = text.split(' ');    
   
     let isThereNum = false;
+    
+    const asiiCodeNumberForDigit = 57;
 
     for (const currWord of splitText) {
 
@@ -15,7 +17,7 @@ function solve (text) {
          for (const curChar of subString) {
             const asciiCode  = curChar.charCodeAt(0);
 
-            if ( 57 - asciiCode > 0) {
+            if ( asiiCodeNumberForDigit - asciiCode > 0) {
                 isThereNum = true;
                 break;
             }          
