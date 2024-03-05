@@ -2,21 +2,37 @@ function solve (text) {
 
     let splitText = text.split(' ');    
   
-    
+    let isThereNum = false;
+
     for (const currWord of splitText) {
 
        const elementLenght = currWord.length;
-        
-        if (currWord.startsWith('#') && elementLenght > 1 && !currWord.includes(Number)) {
-            let subString = currWord.substring(1, currWord.length)
-            console.log(subString);
 
-            
-        }    
+       if (currWord.startsWith('#') && elementLenght > 1) {
+
+        let subString = currWord.substring(1, currWord.length)
         
+         for (const curChar of subString) {
+            const asciiCode  = curChar.charCodeAt(0);
+
+            if ( 57 - asciiCode > 0) {
+                isThereNum = true;
+                break;
+            }          
+            
+         }
+
+         if (isThereNum) {
+            isThereNum = false;
+            continue;            
+         }
+         
+
+         console.log(subString);
+       }  
+       
     } 
 
 }
 
-solve('Nowadays everyone uses # to tag a #special word in #socialMedia');
-solve('')
+solve('Nowadays everyone uses # to tag a #1special word in #socialMedia');
