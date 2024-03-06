@@ -27,8 +27,7 @@ function solve (text) {
          if (isThereNum) {
             isThereNum = false;
             continue;            
-         }
-         
+         }         
 
          console.log(subString);
        }  
