@@ -1,17 +1,17 @@
 function solve(passwordsInput) {
-    let userName = passwordsInput[0];    
+    let rightUserName = passwordsInput[0];    
     
     const reversePassword = reverseInput(passwordsInput.slice(1, passwordsInput.length));
 
-    let count = 0;
+    let countValidationsInput = 0;
     
-    let isPasswordValid = validePassword(reversePassword, count, userName);
+    let isPasswordValid = validePassword(reversePassword, countValidationsInput, rightUserName);
     
     if (isPasswordValid) {
-        return console.log(`User ${userName} logged in.`);        
+        return console.log(`User ${rightUserName} logged in.`);        
     }
 
-    console.log(`User ${userName} blocked!`);     
+    console.log(`User ${rightUserName} blocked!`);     
   
 }
 
