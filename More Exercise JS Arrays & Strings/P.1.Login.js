@@ -1,7 +1,7 @@
 function solve(passwordsInput) {
-    let userName = passwordsInput[0]
-
-    const reversePassword = reverseInput(passwordsInput);
+    let userName = passwordsInput[0];    
+    
+    const reversePassword = reverseInput(passwordsInput.slice(1, passwordsInput.length));
 
     let count = 0;
     
@@ -11,26 +11,31 @@ function solve(passwordsInput) {
         return console.log(`User ${userName} logged in.`);        
     }
 
-    console.log(`User ${username} blocked!`); 
+    console.log(`User ${userName} blocked!`);     
   
 }
 
-function validePassword(reversePassword, count, userName) { 
-    
-    let reversePasswordLength = reversePassword.length;
+function validePassword(reversePassword, count, userName) {
+    let maximumЕrrors = 4;
+
+    let isNameInvalid = true;
  
      for (const currElement of reversePassword) {
         if (currElement !== userName) {
 
-            console.log(`Incorrect password. Try again.`);
             count++;
-        }
-
-      
-    
+            if (count === maximumЕrrors) {
+                isNameInvalid = false;
+                break; 
+             } 
+            console.log(`Incorrect password. Try again.`);
+        } else {
+            break;
+        }          
+        
      }
 
-     if (count === reversePasswordLength) {
+     if (!isNameInvalid) {
         return false;
     }
     return true;
@@ -50,4 +55,4 @@ function reverseInput(inputPass) {
 
 }
 
-solve(['Acer','login','go','let me in','recA']);
+solve(['Acer','login','go','let me in','recA'])
