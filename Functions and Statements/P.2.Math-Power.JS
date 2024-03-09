@@ -6,9 +6,9 @@ function solve(num, pow) {
 
 function solve2(num, pow) {
 
-    const numPow = (a,b) => a ** b; 
+    const customPow = (a,b) => a ** b; 
 
-    let result = numPow(num, pow);
+    let result = customPow(num, pow);
 
     console.log(result);
 }
