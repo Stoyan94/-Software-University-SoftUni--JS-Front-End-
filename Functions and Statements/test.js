@@ -14,5 +14,5 @@ function printDNA(length) {
     }
 }
 
-// Example usage
+
 printDNA(4);
