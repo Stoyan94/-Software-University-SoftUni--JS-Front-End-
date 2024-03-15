@@ -5,7 +5,7 @@ function passwordValidator(password) {
     .filter(character => Number.isInteger(Number(character)))
     .length >= 2;    
 
-    console.log(validatePassword(password));
+    const print = validatePassword(password);
 
     function validatePassword(password) {
         let isValid = true;
