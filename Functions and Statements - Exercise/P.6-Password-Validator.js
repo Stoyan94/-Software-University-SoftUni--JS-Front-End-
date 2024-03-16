@@ -42,6 +42,11 @@ function passwordValidator(password) {
             }
         }
         return true;
+
+     //We iterate over each character in the password using a for loop.
+     // For each character, we check if it falls within the range of lowercase letters ('a' to 'z'), uppercase letters ('A' to 'Z'), or digits ('0' to '9').
+     // If a character is found that is not alphanumeric, we return false.
+     // If all characters pass the alphanumeric check, we return true.
     }
     
 }
@@ -86,3 +91,4 @@ function passwordValidatorFancySolve(password) {
 
 
  passwordValidatorFancySolve('Pa$s$s')
+ passwordValidatorFancySolve('logIn')
