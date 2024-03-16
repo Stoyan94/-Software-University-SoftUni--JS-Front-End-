@@ -1,4 +1,3 @@
-
 function solve(number) {
     const createRow = (num) => new Array(num).fill(num).join(' ');
 
