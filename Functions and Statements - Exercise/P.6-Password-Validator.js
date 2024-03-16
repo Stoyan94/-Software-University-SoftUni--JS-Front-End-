@@ -46,4 +46,43 @@ function passwordValidator(password) {
     
 }
 
-passwordValidator('Pa$s$s')
+function passwordValidatorFancySolve(password) {
+    const IslenghtValid = password =>password.length >= 6 && password.length <= 10;
+    const isAlphaNumerical = checkPassword(password);    
+    const isStrong = password => password
+    .split('')
+    .filter(character => Number.isInteger(Number(character)))
+    .length >= 2;  
+    
+    const validations =[
+        [IslenghtValid, 'Password must be between 6 and 10 characters'],
+        [checkPassword, 'Password must consist only of letters and digits'],
+        [isStrong, 'Password must have at least 2 digits'],
+    ];
+
+    function checkPassword(password) {
+        for (let i = 0; i < password.length; i++) {
+            const char = password[i];
+            if (!((char >= 'a' && char <= 'z') ||
+                  (char >= 'A' && char <= 'Z') ||
+                  (char >= '0' && char <= '9'))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    
+    const checkForErrors =  validations
+    .map(([validator, message]) => validator(password) ? '' : message)
+    .filter(message => !!message);
+    
+    if (checkForErrors.length === 0) {
+        return 'Password is valid';        
+    }
+
+    checkForErrors.forEach(message => console.log(message))
+}
+
+
+ passwordValidatorFancySolve('Pa$s$s')
