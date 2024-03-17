@@ -15,7 +15,7 @@ let person2 = {name: 'Djuliq', age: 23}
 console.log(person2['name']);
 console.log(person2['age']);
 
-//Dynamically add values
+//Dynamically add propertys and values
 let animal = {};
 
 //Add with dot syntax
@@ -31,3 +31,10 @@ console.log(animal.age);
 let propName = 'breed';
 animal[propName] = 'Tiger';
 console.log(animal);
+
+//Add dynamic name property in the literal
+let dynamicPropName = 'fullName';
+let person3 = {
+   [dynamicPropName]: 'Stoyan Stoyanov'
+}
+console.log(person3);
