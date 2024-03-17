@@ -12,7 +12,7 @@ const cat = {
         console.log('Arrr..Meao');
     },
     //arrow func
-    sayName: () => console.log(`My names is ${cat.name}`)
+    sayName: () => console.log(`My names is ${cat.name}`),
 }
 console.log(cat);
 
@@ -32,3 +32,17 @@ cat.sleep = () => console.log('zzzz...');
 cat.eat();
 cat.sleep();
 
+
+//Method notation syntax
+let textMakeSound = 'I can speak wof wof';
+
+const dog = {
+    name: 'SYX',
+    breed: 'Dasrid',
+    makeSound() {
+        console.log(textMakeSound);
+    },
+    ownerName: 'Predator'
+}
+
+dog.makeSound(textMakeSound);
