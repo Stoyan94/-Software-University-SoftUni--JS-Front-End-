@@ -16,6 +16,8 @@ let personInfo2 = {
     age: '20',
 }
 
+//Checks if the property is contained, 
+//and even if it doesn't have a value it will be found
 if (personInfo2.hasOwnProperty('firstName')) {
     console.log('found');
 }
