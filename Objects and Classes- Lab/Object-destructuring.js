@@ -14,7 +14,7 @@ const {name: newName, lastName: newLast} = person
 console.log(newName);
 console.log(newLast);
 
-// Whith rest operator s
+// Whith rest operator
 let cat = {
     breed: 'Iso',
     age: 3,
