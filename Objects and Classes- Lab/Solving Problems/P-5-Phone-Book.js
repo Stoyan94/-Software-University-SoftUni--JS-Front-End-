@@ -9,9 +9,9 @@ function phoneBookInput(params) {
     Object.keys(phoneBook)
     .forEach(name => console.log(`${name} -> ${phoneBook[name]}`))
 
-    for (const name in phoneBook) {
-        console.log(`${name} -> ${phoneBook[name]}`);
-    }
+    // for (const name in phoneBook) {
+    //     console.log(`${name} -> ${phoneBook[name]}`);
+    // }
 }
 
 phoneBookInput(['Tim 0834212554',

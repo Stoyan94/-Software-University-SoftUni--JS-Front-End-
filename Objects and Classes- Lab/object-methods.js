@@ -46,3 +46,7 @@ const dog = {
 }
 
 dog.makeSound(textMakeSound);
+
+//Delete property from object
+delete dog.breed;
+console.log(dog);
