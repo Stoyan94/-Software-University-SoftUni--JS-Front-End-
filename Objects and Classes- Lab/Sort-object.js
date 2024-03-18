@@ -16,4 +16,11 @@ let sortedPhoneBookByValue = Object
     .entries(phoneBook)
     .sort((a, b) => a[1].localeCompare(b[1]));
     
-    console.log(Object.fromEntries(sortedPhoneBookByValue));
+    console.log(Object.fromEntries(sortedPhoneBookByValue))
+
+// With destructuring
+let sortWay2 = Object
+    .entries(phoneBook)
+    .sort(([keyA],[keyB]) => keyA.localeCompare(keyB));
+    
+    console.log(Object.fromEntries(sortWay2));
