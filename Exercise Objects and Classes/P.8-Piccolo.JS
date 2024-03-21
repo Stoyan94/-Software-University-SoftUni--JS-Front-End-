@@ -21,7 +21,23 @@ function solve(parkingInput) {
 
 }
 
-solve(['IN, CA2844AA',
+function solve2(parkingInput) {
+    const parking = {};
+
+    for (const carAction of parkingInput) {
+        const [direction, carNumber] = carAction.split(', ')
+
+        direction === 'IN' ?
+            parking[carNumber] = true
+            : delete parking[carNumber]
+    }
+
+    Object.keys(parking)
+          .sort((a,b) => a.localeCompare(b))
+          .forEach(number => console.log(number))
+}
+
+solve2(['IN, CA2844AA',
 'IN, CA1234TA',
 'OUT, CA2844AA',
 'IN, CA9999TT',
