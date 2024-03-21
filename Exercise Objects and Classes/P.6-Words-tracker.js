@@ -19,7 +19,7 @@ function solve(input) {
               .forEach(([word, occurrences]) => console.log(`${word} - ${occurrences}`));
 }
 
-function solve(input) {
+function solve2(input) {
     const words = {};
     const searchWords = input.shift().split(' ');
 
