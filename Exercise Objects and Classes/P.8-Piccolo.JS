@@ -1,8 +1,6 @@
 function solve(parkingInput) {
     const parking = [];
-
-    let inComand = 'IN'
-
+    
     for (const carAction of parkingInput) {
         if (carAction[0] === 'I') {
             parking.push(carAction.slice(4))
@@ -17,7 +15,8 @@ function solve(parkingInput) {
         console.log('Parking Lot is Empty');
     }
 
-    parking.sort((a,b) => a.localeCompare(b)).forEach(number => {console.log(number)});
+    parking.sort((a,b) => a.localeCompare(b))
+            .forEach(number => {console.log(number)});
 
 }
 
