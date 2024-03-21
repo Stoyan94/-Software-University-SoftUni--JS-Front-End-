@@ -13,6 +13,10 @@ function solve(parkingInput) {
         }
     }
 
+    if (parking.length < 1) {
+        console.log('Parking Lot is Empty');
+    }
+
     parking.sort((a,b) => a.localeCompare(b)).forEach(number => {console.log(number)});
 
 }
