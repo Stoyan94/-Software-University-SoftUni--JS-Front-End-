@@ -17,7 +17,20 @@ function armies(arrInput) {
                 objArmies[leader].armies.push(objLeader);
                 objArmies[leader].totalCount += count;
             }
-        } 
+        } else if (input.includes('+')) {
+            let [armName, count] = input.split(' + ')
+            count = parseInt(count);
+            for (const [leader, armInfo] of Object.entries(objArmies)) {
+                const foundIndex = armInfo.armies.findIndex(arm => arm.armName === armName);
+
+                if (foundIndex >= 0) {
+                    objArmies[leader].totalCount += count;
+                    objArmies[leader].armies[foundIndex].count += count;
+                    break;
+                }
+
+            }
+        }
 
 
     }
