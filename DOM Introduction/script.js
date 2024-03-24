@@ -18,3 +18,13 @@ console.log(firstInputTextElement);
 // Get all input type text elements
 const inputTextElements = document.querySelectorAll('.fancy-input[type=text]')
 console.log(inputTextElements);
+
+// NodeList vs HTMLCollection
+console.log();
+const contentStaticNodeLsit = document.querySelectorAll('#content > *')
+console.log(contentStaticNodeLsit);
+const contentElement = document.querySelector('#content')
+const contentLiveNodeList = contentElement.childNodes;
+const contentLiveHtmlCollection = contentElement.children;
+console.log(contentLiveNodeList);
+console.log(contentLiveHtmlCollection);
