@@ -57,3 +57,7 @@ console.log('Nodes array');
 // let htmlNodessArray = Array.from(contentLiveNodeList)
 let htmlNodessArray = [...contentLiveNodeList]
 console.log(htmlNodessArray);
+
+// Get parent
+console.log(firstInputTextElement.parentElement);
+console.log(firstInputTextElement.parentNode);
