@@ -5,7 +5,7 @@ function colorize() {
         evenRow.style.backgroundColor = 'teal'
     }
     
-    evenRowElemets.forEach(elemet => elemet.style.backgroundColor = 'teal')
+    //evenRowElemets.forEach(elemet => elemet.style.backgroundColor = 'teal')
 }
 
 // function colorize() {
