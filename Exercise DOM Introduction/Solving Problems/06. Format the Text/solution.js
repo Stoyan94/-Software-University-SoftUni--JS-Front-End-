@@ -6,8 +6,10 @@ function solve() {
   // Convert to paragraphs
   const result = text
       .split('.')
-      .reduce((result, sentence, i) => {
+      .filter(sentence => !!sentence)
+      .reduce((result, sentence, i) => {        
         const resultIndex = Math.floor(i / 3);
+
         if (!result[resultIndex]) {
           result[resultIndex] = [];
         } 
@@ -16,9 +18,13 @@ function solve() {
 
         return result;
       },[])
-      .map(sentences => sentences.join('. '))
+      .map(sentences => `<p>${sentences.join('. ')}.</p>`)
+      .join('\n');      
 
-  // text
+      outputElement.innerHTML = result; 
+}
+
+ // text
   //     .split('.')
   //     .map(sentence => {
   //      const pElement = document.createElement('p') 
@@ -28,4 +34,3 @@ function solve() {
   //     })
 
   //Append to output element
-}
