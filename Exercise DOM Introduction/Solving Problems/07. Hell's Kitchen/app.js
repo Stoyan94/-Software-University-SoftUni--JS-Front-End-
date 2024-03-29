@@ -26,7 +26,7 @@ function solve() {
              for (const workersInfo of workersAndSalary) {
                   const [worker, salary] = workersInfo.split(' ');
 
-                  currWorker = { name: worker, salary: salary };
+                  currWorker = { name: worker, salary: Number(salary).toFixed(2) };
                   currResturant.workers.push(currWorker);
              }
              allResturants.push(currResturant);
@@ -40,16 +40,16 @@ function solve() {
 
             const totalWorkers = restaurant.workers.length;     
 
-            const averageSalary = totalSalary / totalWorkers;     
+            const averageSalary = totalSalary / totalWorkers.toFixed(2);     
             return {
                 restaurantName: restaurant.name,
                 averageSalary: Number(averageSalary.toFixed(2))
             };
         });
 
-         const maxAverageSalary = Math.max(...averageSalaries.map(restaurant => restaurant.averageSalary));
+         const maxAverageSalary = Math.max(...averageSalaries.map(restaurant => restaurant.averageSalary)).toFixed(2);
 
-         const bestRestaurants = averageSalaries.filter(restaurant => restaurant.averageSalary === maxAverageSalary)
+         const bestRestaurants = averageSalaries.filter(restaurant => restaurant.averageSalary.toFixed(2) === maxAverageSalary)
 
          const bestRestaurantsInfo = allResturants.filter(restaurant => restaurant.name === bestRestaurants[0].restaurantName);
 
