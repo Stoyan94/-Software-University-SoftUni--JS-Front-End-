@@ -47,17 +47,22 @@ function solve() {
             };
         });
 
-         const maxAverageSalary = Math.max(...averageSalaries.map(restaurant => restaurant.averageSalary));
-
+        const averageSalaryValues = Array.from(averageSalaries, restaurant => restaurant.averageSalary);
+       
+        const maxAverageSalary = averageSalaryValues.reduce((max, current) => {
+            return Math.max(max, current);
+        }, 0); 
+         
          const bestRestaurants = averageSalaries.filter(restaurant => restaurant.averageSalary === maxAverageSalary)
 
          const bestRestaurantsInfo = allResturants.filter(restaurant => restaurant.name === bestRestaurants[0].restaurantName);
 
-         const bestSalary = bestRestaurantsInfo.map(restaurant => {         
-            const salaries = restaurant.workers.map(worker => worker.salary);   
+         const bestSalary = bestRestaurantsInfo.map(resturant => resturant.workers
+                                                .map(worker=> worker.salary)
+                                                .reduce((acc, salary) => {
 
-            return Math.max(...salaries).toFixed(2);
-        });
+                                                    return Math.max(acc, salary).toFixed(2)
+                                                },0))             
 
          bestRestaurantElement.textContent = `Name: ${bestRestaurants[0].restaurantName} Average Salary: ${maxAverageSalary.toFixed(2)} Best Salary: ${bestSalary}`
 
