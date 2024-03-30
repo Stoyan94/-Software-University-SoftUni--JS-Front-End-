@@ -26,7 +26,7 @@ function solve() {
              for (const workersInfo of workersAndSalary) {
                   const [worker, salary] = workersInfo.split(' ');
 
-                  currWorker = { name: worker, salary: Number(salary).toFixed(2) };
+                  currWorker = { name: worker, salary: Number(salary) };
                   currResturant.workers.push(currWorker);
              }
              allResturants.push(currResturant);
@@ -35,21 +35,21 @@ function solve() {
          const averageSalaries = allResturants.map(restaurant => {
 
             const totalSalary = restaurant.workers.reduce((acc, worker) => {
-                return acc + parseInt(worker.salary);
+                return acc + Number(worker.salary);
             }, 0);      
 
             const totalWorkers = restaurant.workers.length;     
 
-            const averageSalary = totalSalary / totalWorkers.toFixed(2);     
+            const averageSalary = totalSalary / totalWorkers;     
             return {
                 restaurantName: restaurant.name,
-                averageSalary: Number(averageSalary.toFixed(2))
+                averageSalary: Number(averageSalary)
             };
         });
 
-         const maxAverageSalary = Math.max(...averageSalaries.map(restaurant => restaurant.averageSalary)).toFixed(2);
+         const maxAverageSalary = Math.max(...averageSalaries.map(restaurant => restaurant.averageSalary));
 
-         const bestRestaurants = averageSalaries.filter(restaurant => restaurant.averageSalary.toFixed(2) === maxAverageSalary)
+         const bestRestaurants = averageSalaries.filter(restaurant => restaurant.averageSalary === maxAverageSalary)
 
          const bestRestaurantsInfo = allResturants.filter(restaurant => restaurant.name === bestRestaurants[0].restaurantName);
 
@@ -59,7 +59,7 @@ function solve() {
             return Math.max(...salaries).toFixed(2);
         });
 
-         bestRestaurantElement.textContent = `Name: ${bestRestaurants[0].restaurantName} Average Salary: ${maxAverageSalary} Best Salary: ${bestSalary}`
+         bestRestaurantElement.textContent = `Name: ${bestRestaurants[0].restaurantName} Average Salary: ${maxAverageSalary.toFixed(2)} Best Salary: ${bestSalary}`
 
          const printWorkers = [];
 
