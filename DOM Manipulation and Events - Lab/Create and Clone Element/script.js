@@ -15,3 +15,6 @@ movieListElement.appendChild(seckondMovieElement)
 const firstMovieCloneElement = firstMovieElement.cloneNode(true)
 firstMovieCloneElement.textContent += ' Clone'
 movieListElement.appendChild(firstMovieCloneElement)
+
+// Add element in first position with prepend
+movieListElement.prepend(firstMovieCloneElement)
