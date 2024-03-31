@@ -18,3 +18,18 @@ movieListElement.appendChild(firstMovieCloneElement)
 
 // Add element in first position with prepend
 movieListElement.prepend(firstMovieCloneElement)
+
+// Append element on specific place before another child element
+// we first submit the element that we want to take the place 
+// of the other element
+const thirdMovie = document.createElement('li')
+thirdMovie.textContent = 'Lord Of The Rings'
+movieListElement.insertBefore(thirdMovie,seckondMovieElement)
+
+// Before and After
+const fourthMovieElement = document.createElement('li')
+fourthMovieElement.textContent = 'Power Rangers'
+// With after or before we can add more than one element
+
+thirdMovie.after(fourthMovieElement)
+//thirdMovie.before(fourthMovieElement)
