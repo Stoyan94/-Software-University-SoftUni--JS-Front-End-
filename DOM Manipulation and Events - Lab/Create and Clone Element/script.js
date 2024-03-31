@@ -6,5 +6,12 @@ const firstMovieElement = document.querySelector('.first-movie')
 const seckondMovieElement = document.createElement('li')
 seckondMovieElement.textContent = 'Kung-fu Dunk'
 
-// Append Element to DOM - always the element is added to the end
+// Append new    Element to DOM - always the element is added to the end
 movieListElement.appendChild(seckondMovieElement)
+
+// Clone existing element
+// If we don't pass true, 
+// we will copy the "li" element itself (the node element), without the value in it
+const firstMovieCloneElement = firstMovieElement.cloneNode(true)
+firstMovieCloneElement.textContent += ' Clone'
+movieListElement.appendChild(firstMovieCloneElement)
