@@ -1,7 +1,7 @@
 function focused() {
     const inputElements = document.querySelectorAll('input[type=text]');
 
-    Array.from(inputElements).forEach(inputElement => inputElement.addEventListener('focus', (event) => {
+    Array.from(inputElements).forEach(inputElement => inputElement.3addEventListener('focus', (event) => {
         event.target.parentElement.classList.add('focused');
     }));
 
