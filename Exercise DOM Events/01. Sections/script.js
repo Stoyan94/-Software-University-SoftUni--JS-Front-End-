@@ -28,5 +28,11 @@ function create(words) {
     // Better solution, but append doesn't work in Judge
    //  contentElement.append(...divElements)   
 
-   divElements.forEach(divElement => contentElement.appendChild(divElement))
+   // divElements.forEach(divElement => contentElement.appendChild(divElement))
+
+   // Best solution
+   const divElementsFragment = document.createDocumentFragment();
+   divElements.forEach(divElement => divElementsFragment.appendChild(divElement))
+   
+   contentElement.appendChild(divElementsFragment)
 }
