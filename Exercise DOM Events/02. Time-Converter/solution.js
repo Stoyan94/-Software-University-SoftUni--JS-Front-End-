@@ -41,3 +41,55 @@ function attachEventsListeners() {
         })
     }
 }
+
+function solve2() {
+    document.getElementById("daysBtn").addEventListener("click", function() {
+        convertTime("days");
+    });
+
+    document.getElementById("hoursBtn").addEventListener("click", function() {
+        convertTime("hours");
+    });
+
+    document.getElementById("minutesBtn").addEventListener("click", function() {
+        convertTime("minutes");
+    });
+
+    document.getElementById("secondsBtn").addEventListener("click", function() {
+        convertTime("seconds");
+    });
+
+    function convertTime(unit) {
+        let inputValue = parseFloat(document.getElementById(unit).value);
+
+        const days = document.getElementById("days");
+        const hours = document.getElementById("hours");
+        const minutes = document.getElementById("minutes");
+        const seconds = document.getElementById("seconds");
+
+        if (inputValue) {
+            switch (unit) {
+                case "days":
+                    hours.value = inputValue * 24;
+                    minutes.value = inputValue * 24 * 60;
+                    seconds.value = inputValue * 24 * 60 * 60;
+                    break;
+                case "hours":
+                    days.value = inputValue / 24;
+                    minutes.value = inputValue * 60;
+                    seconds.value = inputValue * 60 * 60;
+                    break;
+                case "minutes":
+                    days.value = inputValue / (24 * 60);
+                    hours.value = inputValue / 60;
+                    seconds.value = inputValue * 60;
+                    break;
+                case "seconds":
+                    days.value = inputValue / (24 * 60 * 60);
+                    hours.value = inputValue / (60 * 60);
+                    minutes.value = inputValue / 60;
+                    break;
+            }
+        } 
+    }
+}
