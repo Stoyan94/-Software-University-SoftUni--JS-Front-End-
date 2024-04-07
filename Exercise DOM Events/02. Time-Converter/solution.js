@@ -1,4 +1,4 @@
-function attachEventsListeners() {
+function attachEventsListeners2() {
     const converButtonsElements = document.querySelectorAll('input[type=button][value=Convert]');
     const inputElements = document.querySelectorAll('input[type=text]');
 
@@ -42,7 +42,7 @@ function attachEventsListeners() {
     }
 }
 
-function solve2() {
+function attachEventsListeners() {
     document.getElementById("daysBtn").addEventListener("click", function() {
         convertTime("days");
     });
@@ -67,29 +67,29 @@ function solve2() {
         const minutes = document.getElementById("minutes");
         const seconds = document.getElementById("seconds");
 
-        if (inputValue) {
-            switch (unit) {
-                case "days":
-                    hours.value = inputValue * 24;
-                    minutes.value = inputValue * 24 * 60;
-                    seconds.value = inputValue * 24 * 60 * 60;
-                    break;
-                case "hours":
-                    days.value = inputValue / 24;
-                    minutes.value = inputValue * 60;
-                    seconds.value = inputValue * 60 * 60;
-                    break;
-                case "minutes":
-                    days.value = inputValue / (24 * 60);
-                    hours.value = inputValue / 60;
-                    seconds.value = inputValue * 60;
-                    break;
-                case "seconds":
-                    days.value = inputValue / (24 * 60 * 60);
-                    hours.value = inputValue / (60 * 60);
-                    minutes.value = inputValue / 60;
-                    break;
-            }
-        } 
+       
+        switch (unit) {
+            case "days":
+                hours.value = inputValue * 24; 
+                minutes.value = inputValue * 24 * 60;
+                seconds.value = inputValue * 24 * 60 * 60;
+                break;
+            case "hours":
+                days.value = inputValue / 24;
+                minutes.value = inputValue * 60;
+                seconds.value = inputValue * 60 * 60;
+                break;
+            case "minutes":
+                days.value = inputValue / (24 * 60);
+                hours.value = inputValue / 60;
+                seconds.value = inputValue * 60;
+                break;
+            case "seconds":
+                days.value = inputValue / (24 * 60 * 60);
+                hours.value = inputValue / (60 * 60);
+                minutes.value = inputValue / 60;
+                break;
+        }
+        
     }
 }
