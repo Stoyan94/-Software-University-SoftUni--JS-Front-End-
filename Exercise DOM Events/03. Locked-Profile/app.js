@@ -10,8 +10,15 @@ function lockedProfile() {
                 return;
             }
             
-            const additionInformationElement = showButtonElement.previousElementSibling;
-            additionInformationElement.style.display = 'block'
+            const additionInformationElement = showButtonElement.previousElementSibling;  
+
+            if (showButtonElement.textContent === 'Show more') {
+                showButtonElement.textContent = 'Hide it'
+                additionInformationElement.style.display = 'block';
+            } else {
+                showButtonElement.textContent = 'Show more'
+                additionInformationElement.style.display = 'none';
+            }
         })
     }
 
