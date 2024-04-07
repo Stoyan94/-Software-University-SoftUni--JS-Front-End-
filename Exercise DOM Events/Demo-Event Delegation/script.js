@@ -24,11 +24,18 @@ function create(words) {
    divElements.forEach(divElement => divElementsFragment.appendChild(divElement))
     
    contentElement.appendChild(divElementsFragment)
+
    // Attach "multiple" event using event delegation
-    contentElement.addEventListener('click', (e) => {
+   contentElement.addEventListener('click', (e) => {
       if (e.target.tagName === 'DIV') {
-         const pElement = e.target.querySelector('p').style.display = 'block';
+          const pElement = e.target.querySelector('p');
+
+          if (pElement.style.display === 'none') {
+              pElement.style.display = 'block';
+          } else {
+              pElement.style.display = 'none';
+          }
       }
-    })
+  });
 
 }
