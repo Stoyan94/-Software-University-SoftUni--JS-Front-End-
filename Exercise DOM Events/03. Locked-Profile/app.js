@@ -10,15 +10,25 @@ function lockedProfile() {
                 return;
             }
             
-            const additionInformationElement = showButtonElement.previousElementSibling;  
+            const additionInfoElement = showButtonElement.previousElementSibling;  
 
             if (showButtonElement.textContent === 'Show more') {
                 showButtonElement.textContent = 'Hide it'
-                additionInformationElement.style.display = 'block';
+                additionInfoElement.style.display = 'block';
             } else {
                 showButtonElement.textContent = 'Show more'
-                additionInformationElement.style.display = 'none';
+                additionInfoElement.style.display = 'none';
             }
+
+            // With ternary operator 
+            // additionInfoElement.style.display = additionInfoElement.style.display === 'block' 
+            //     ? 'none'
+            //     : 'block';
+
+            // showButtonElement.textContent = showButtonElement.textContent === 'Show more'
+            //     ? 'Hide it'
+            //     : 'Show more';
+            
         })
     }
 
