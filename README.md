@@ -1,1 +1,1 @@
-# -Software-University-SoftUni--JS-Front-End-
+# -Software-University-SoftUni--JS-Front-End-![JS Front-End - February 2024 - Certificate](https://github.com/Stoyan94/-Software-University-SoftUni--JS-Front-End-/assets/122618231/8e8fe6eb-19d5-400d-94e6-a0405ac1f696)
